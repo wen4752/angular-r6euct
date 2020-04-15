@@ -40,10 +40,9 @@
 <br>
 Hasil: {{output}}
 <br>
-Pola
-<ng-template *ngIf="output%2==0; then showGenap else showGanjil"></ng-template>
-<ng-template #showGenap>B</ng-template>
-<ng-template #showGanjil>A</ng-template>
+Pola {{pola}}
+<br>
+<div [innerHTML]="bentukPola"></div>
 <br>
 
 
