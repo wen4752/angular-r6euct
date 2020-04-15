@@ -13,6 +13,6 @@
   {{a*b}}
 </p>
 
-<div>
-  {{item.nama}} harganya {{item.harga}}
+<div *ngFor="let buah of itembuah; let i = index" >
+ {{i+1}}. {{buah.nama}} - {{buah.harga | currency: 'Rp'}}
 </div>
