@@ -60,9 +60,12 @@ export class AppComponent {
         for(var j=0;j<max-i;j++){
           this.bentukPola += "*"
         }
-        for(var j=0;j<=count && j<min;j++){
-          this.bentukPola+="o"
+        if(count< min){
+          for(var j=0;j<=count;j++){
+            this.bentukPola+="o"
+          }
         }
+        
         count++
         this.bentukPola+="<br>"
       }
