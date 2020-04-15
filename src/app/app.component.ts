@@ -33,10 +33,16 @@ export class AppComponent {
   hitung(a, b) {
     this.output = Math.pow(a, b)
     var max
-    if (a > b)
+    var min
+    if (a > b){
       max = a
-    else
+      min=b
+    }
+    else{
       max = b
+      min=a
+    }
+      
     if (Math.pow(a, b) % 2 == 0) {
       this.pola = "B"
       for (var i = 0; i < Math.pow(a, b) - 2; i++) {
@@ -49,8 +55,16 @@ export class AppComponent {
     else {
       this.bentukPola=""
       this.pola = "A"
-      for(var i = parseInt(max);i>0;i++){
-        
+      var count=0
+      for(var i = 0;i<max;i++){
+        for(var j=0;j<max-i;j++){
+          this.bentukPola += "*"
+        }
+        for(var j=0;j<=count && j<min;j++){
+          this.bentukPola+="o"
+        }
+        count++
+        this.bentukPola+="<br>"
       }
     }
 
